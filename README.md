@@ -27,7 +27,7 @@ The table below summarizes the performance comparison between different oversamp
 | Duplication | 49.3           | 90.7           | 97.2        | 82.2        | 65.4     | 86.3     | Strong recall boost but precision drops, indicating overfitting and minority-label overprediction.                               |
 | VAE         | **88.4**       | **100**        | 92.5        | 86.0        | **90.4** | **92.5** | Best precision–recall balance; synthetic samples add meaningful variability but may shift the feature space for complex bundles. |
 | SMOTE       | 78.4           | 86.2           | **98.1**    | **93.5**    | 87.1     | 89.7     | Highest recall; expands the decision boundary effectively but increases false positives relative to VAE.                         |
-|  |
+
 
 ## Full Work
 
