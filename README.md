@@ -21,12 +21,13 @@ The main files included in this repository are:
 
 The table below summarizes the performance comparison between different oversampling techniques:
 
-| Method                     | Train Acc. | Test Acc. | FX_L Acc. | FX_L F1  | FX_R Acc. | FX_R F1  | Observations                                                  |
-| -------------------------- | ---------- | --------- | --------- | -------- | --------- | -------- | ------------------------------------------------------------- |
-| Baseline (no oversampling) | 0.91       | 0.83      | 0.42      | 0.38     | 0.45      | 0.40     | Strong bias toward majority bundles; fornix poorly classified |
-| Duplication                | 0.96       | 0.84      | 0.55      | 0.50     | 0.53      | 0.48     | Improves minority classes but risk of overfitting             |
-| VAE                        | 0.93       | 0.85      | 0.62      | 0.58     | 0.60      | 0.55     | Synthetic samples increase diversity; moderate gains          |
-| SMOTE                      | 0.94       | **0.88**  | **0.71**  | **0.68** | **0.73**  | **0.69** | Best trade-off; consistent improvements                       |
+| Method      | FX_L Precision | FX_R Precision | FX_L Recall | FX_R Recall | FX_L F1  | FX_R F1  | Observations                                                                                                                     |
+| ----------- | -------------- | -------------- | ----------- | ----------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Baseline    | 65.8           | **100**        | 93.5        | 52.3        | 77.2     | 68.7     | High precision but poor recall for FX_R; clear under-representation effects visible in both fornix bundles.                      |
+| Duplication | 49.3           | 90.7           | 97.2        | 82.2        | 65.4     | 86.3     | Strong recall boost but precision drops, indicating overfitting and minority-label overprediction.                               |
+| VAE         | **88.4**       | **100**        | 92.5        | 86.0        | **90.4** | **92.5** | Best precision–recall balance; synthetic samples add meaningful variability but may shift the feature space for complex bundles. |
+| SMOTE       | 78.4           | 86.2           | **98.1**    | **93.5**    | 87.1     | 89.7     | Highest recall; expands the decision boundary effectively but increases false positives relative to VAE.                         |
+|  |
 
 ## Full Work
 
